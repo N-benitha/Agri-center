@@ -75,6 +75,51 @@ public class ProductDAO {
         return products;
     }
     
+    public ProductModel getSingleProduct(int id) {
+        ProductModel row = null;
+        
+        try {
+            query  = "select * from products where id=?";
+            pst = this.con.prepareStatement(query);
+            pst.setInt(1, id);
+            rs = pst.executeQuery();
+            
+            while(rs.next()) {
+                row = new ProductModel();
+                row.setId(rs.getInt("id"));
+                row.setName(rs.getString("name"));
+                row.setCategory(rs.getString("category"));
+                row.setPrice(rs.getDouble("price"));
+                row.setImage(rs.getString("image"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return row;
+    }
+    
+    public double getTotalCartPrice(ArrayList<Cart> cartList) {
+        double sum = 0;
+        
+        try{
+            if (cartList.size() > 0){
+                for (Cart item:cartList) {
+                    query = "Select price from products where id=?";
+                    pst = this.con.prepareStatement(query);
+                    pst.setInt(1, item.getId());
+                    rs = pst.executeQuery();
+                    
+                    while (rs.next()) {
+                        sum += rs.getDouble("price")*item.getQuantity();
+                    }
+                }
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return sum;
+    }
+    
     private final Connection con;
     private String query;
     private PreparedStatement pst;

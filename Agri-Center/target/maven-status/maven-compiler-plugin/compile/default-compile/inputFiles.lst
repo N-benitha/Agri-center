@@ -1,9 +1,16 @@
 C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\com\connect\DbCon.java
 C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\com\model\Cart.java
+C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\com\model\Orders.java
 C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\com\model\ProductModel.java
 C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\com\User\User.java
+C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\OrderDAO\OrderDAO.java
 C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\ProductDAO\ProductDAO.java
+C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\Servlet\BuyNowServlet.java
+C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\Servlet\CancelOrderServlet.java
 C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\Servlet\CartOperations.java
+C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\Servlet\CheckOutServlet.java
+C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\Servlet\DeleteFromCart.java
 C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\Servlet\LoginServlet.java
 C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\Servlet\LogoutServlet.java
+C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\Servlet\QuantityChangeServlet.java
 C:\Users\ngung\OneDrive\Documents\NetBeansProjects\Agri-Center\src\main\java\UserDAO\UserDAO.java

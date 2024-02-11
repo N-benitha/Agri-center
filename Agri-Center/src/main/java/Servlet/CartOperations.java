@@ -42,12 +42,12 @@ public class CartOperations extends HttpServlet {
             if (cart_list == null) {
                 cartList.add(cm);
                 session.setAttribute("cart-list", cartList);
-                out.println("session created and added to the list");
+                response.sendRedirect("index.jsp");
             } else {
                 cartList = cart_list;
                 boolean exist = false;
                 
-                for (Cart c:cartList) {
+                for (Cart c:cart_list) {
                     if(c.getId() == id){
                         exist = true;
                         out.println("<h3 style='color:crimson; text-align:center'>Item already exist in Cart.<a href = 'cart.jsp'>CheckOut</a></h3>");

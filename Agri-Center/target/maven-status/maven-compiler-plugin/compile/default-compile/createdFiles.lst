@@ -1,5 +1,12 @@
 com\model\Cart.class
+Servlet\BuyNowServlet.class
 Servlet\LogoutServlet.class
 ProductDAO\ProductDAO.class
-Servlet\CartOperations.class
 com\model\ProductModel.class
+com\model\Orders.class
+Servlet\QuantityChangeServlet.class
+Servlet\CartOperations.class
+Servlet\CancelOrderServlet.class
+Servlet\DeleteFromCart.class
+OrderDAO\OrderDAO.class
+Servlet\CheckOutServlet.class

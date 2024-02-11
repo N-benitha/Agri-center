@@ -4,6 +4,8 @@
     Author     : ngung
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.Cart"%>
 <%@page import="com.User.User"%>
 <%@page import="com.connect.DbCon"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,6 +13,10 @@
     User auth = (User) request.getSession().getAttribute("auth");
     if (auth != null) {
     response.sendRedirect("index.jsp");
+    }
+    ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+    if (cart_list != null) {
+        request.setAttribute("cart_list", cart_list);
     }
 %>
 <!DOCTYPE html>
@@ -46,6 +52,9 @@
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Login</button>
                         </div>
+                        <div class="text-center">
+                            <p>You don't have an account? <a href="#">Sign in </a>Here</p>
+                        </div>
 
                     </form>
                 </div>
@@ -54,7 +63,7 @@
 
         </div>
 
-        
+        <%@include file = "includes/footer2.jsp" %>
         <%@include file = "includes/footer.jsp" %>
     </body>
     

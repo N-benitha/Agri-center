@@ -4,6 +4,8 @@
     Author     : ngung
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.Cart"%>
 <%@page import="java.util.List"%>
 <%@page import="com.model.ProductModel"%>
 <%@page import="ProductDAO.ProductDAO"%>
@@ -18,6 +20,11 @@
     
 ProductDAO pd = new ProductDAO(DbCon.getConnection());
 List<ProductModel> products = pd.getAllProducts();
+
+ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+    if (cart_list != null) {
+        request.setAttribute("cart_list", cart_list);
+    }
 
 %>
 <!DOCTYPE html>
@@ -49,7 +56,7 @@ List<ProductModel> products = pd.getAllProducts();
                             
                                         <div class="mt-3 d-flex justify-content-between">
                                             <a href="cart-operations?id=<%= p.getId()%>" class="btn btn-dark">Add to Cart</a>
-                                            <a href="cart-operations" class="btn btn-primary">Buy Now</a>
+                                            <a href="buy-now?quantity=1&id=<%= p.getId() %>" class="btn btn-primary">Buy Now</a>
                                         </div>
                             
                                     </div>
@@ -61,8 +68,9 @@ List<ProductModel> products = pd.getAllProducts();
                 
                 
             </div>
+                
         </div>
-        
+        <%@include file = "includes/footer2.jsp" %>
         <%@include file = "includes/footer.jsp" %>
     </body>
     
